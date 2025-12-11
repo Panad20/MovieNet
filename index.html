@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+
+    <nav class="navbar">
+        <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt="Netflix Logo" class="logo">
+        <ul class="nav-links">
+            <li><a href="#" class="active">หน้าหลัก</a></li>
+            <li><a href="#">ซีรีส์</a></li>
+            <li><a href="#">ภาพยนตร์</a></li>
+            <li><a href="#">มาใหม่และน่าสนใจ</a></li>
+            <li><a href="#">รายการของฉัน</a></li>
+        </ul>
+        <div class="nav-right">
+            <input type="text" placeholder="ค้นหา" class="search-box">
+            <span class="profile-icon">👤</span>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>ชื่อภาพยนตร์สุดฮิต</h1>
+            <p>คำอธิบายย่อๆ ของภาพยนตร์ที่น่าสนใจ ดึงดูดให้คนอยากดู</p>
+            <div class="hero-buttons">
+                <button class="play-button">▶ เล่น</button>
+                <button class="info-button">ⓘ ข้อมูลเพิ่มเติม</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="content-rows">
+        <h2>กำลังเป็นที่นิยม</h2>
+        <div class="row">
+            <div class="movie-card" data-movie-id="[VIMEO_VIDEO_ID_1]">
+                <img src="https://via.placeholder.com/300x170?text=Movie+1" alt="Movie 1">
+            </div>
+            <div class="movie-card" data-movie-id="[VIMEO_VIDEO_ID_2]">
+                <img src="https://via.placeholder.com/300x170?text=Movie+2" alt="Movie 2">
+            </div>
+            <div class="movie-card" data-movie-id="[VIMEO_VIDEO_ID_3]">
+                <img src="https://via.placeholder.com/300x170?text=Movie+3" alt="Movie 3">
+            </div>
+             <div class="movie-card" data-movie-id="[VIMEO_VIDEO_ID_4]">
+                <img src="https://via.placeholder.com/300x170?text=Movie+4" alt="Movie 4">
+            </div>
+             <div class="movie-card" data-movie-id="[VIMEO_VIDEO_ID_5]">
+                <img src="https://via.placeholder.com/300x170?text=Movie+5" alt="Movie 5">
+            </div>
+             <div class="movie-card" data-movie-id="[VIMEO_VIDEO_ID_6]">
+                <img src="https://via.placeholder.com/300x170?text=Movie+6" alt="Movie 6">
+            </div>
+        </div>
+
+        <h2>แนะนำสำหรับคุณ</h2>
+        <div class="row">
+            <div class="movie-card" data-movie-id="[VIMEO_VIDEO_ID_7]">
+                <img src="https://via.placeholder.com/300x170?text=Movie+7" alt="Movie 7">
+            </div>
+            <div class="movie-card" data-movie-id="[VIMEO_VIDEO_ID_8]">
+                <img src="https://via.placeholder.com/300x170?text=Movie+8" alt="Movie 8">
+            </div>
+            <div class="movie-card" data-movie-id="[VIMEO_VIDEO_ID_9]">
+                <img src="https://via.placeholder.com/300x170?text=Movie+9" alt="Movie 9">
+            </div>
+             <div class="movie-card" data-movie-id="[VIMEO_VIDEO_ID_10]">
+                <img src="https://via.placeholder.com/300x170?text=Movie+10" alt="Movie 10">
+            </div>
+             <div class="movie-card" data-movie-id="[VIMEO_VIDEO_ID_11]">
+                <img src="https://via.placeholder.com/300x170?text=Movie+11" alt="Movie 11">
+            </div>
+             <div class="movie-card" data-movie-id="[VIMEO_VIDEO_ID_12]">
+                <img src="https://via.placeholder.com/300x170?text=Movie+12" alt="Movie 12">
+            </div>
+        </div>
+    </section>
+
+    <div id="watch-page" class="hidden">
+        <button class="back-button">← กลับ</button>
+        <div id="vimeo-player">
+            </div>
+    </div>
+
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="script.js"></script> </body>
+</html>
