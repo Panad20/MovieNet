@@ -1,0 +1,243 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #141414;
+    color: #e5e5e5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* ป้องกัน scrollbar แนวนอน */
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 10%, rgba(0,0,0,0));
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: #141414; /* สีทึบเมื่อเลื่อนลงมา */
+}
+
+.navbar .logo {
+    height: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #fff;
+    font-weight: bold;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid #e5e5e5;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: #e5e5e5;
+    margin-right: 20px;
+}
+
+.profile-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    height: 90vh; /* สูงเกือบเต็มหน้าจอ */
+    background: url('https://via.placeholder.com/1920x1080?text=Hero+Background') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    color: #fff;
+}
+
+.hero-section::after { /* เพิ่ม Gradient ด้านล่าง */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #141414, transparent);
+}
+
+.hero-content {
+    max-width: 50%;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.hero-buttons .play-button,
+.hero-buttons .info-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-buttons .play-button {
+    background-color: #fff;
+    color: #141414;
+}
+
+.hero-buttons .play-button:hover {
+    background-color: rgba(255,255,255,0.7);
+}
+
+.hero-buttons .info-button {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: #fff;
+}
+
+.hero-buttons .info-button:hover {
+    background-color: rgba(109, 109, 110, 0.5);
+}
+
+/* --- Content Rows (Movie Carousels) --- */
+.content-rows {
+    padding: 20px 60px;
+    margin-top: -150px; /* เลื่อนขึ้นมาทับ Hero section นิดหน่อย */
+    position: relative;
+    z-index: 10;
+}
+
+.content-rows h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.row {
+    display: flex;
+    overflow-x: scroll; /* ทำให้เลื่อนได้แนวนอน */
+    padding-bottom: 10px; /* เพื่อให้เห็น scrollbar ชัดเจน */
+    scroll-behavior: smooth; /* เลื่อนอย่างนุ่มนวล */
+    -webkit-overflow-scrolling: touch; /* ปรับปรุงการเลื่อนบนมือถือ */
+}
+
+/* ซ่อน Scrollbar บน Chrome/Safari */
+.row::-webkit-scrollbar {
+    display: none;
+}
+/* ซ่อน Scrollbar บน Firefox */
+.row {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
+.movie-card {
+    flex: 0 0 auto; /* ไม่ให้ card ยืดหด */
+    width: 280px; /* กำหนดความกว้างของแต่ละ card */
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.movie-card:hover {
+    transform: scale(1.05); /* ขยายเมื่อเอาเมาส์ไปชี้ */
+    z-index: 20; /* ให้ card ที่ hover อยู่ด้านบน */
+}
+
+/* --- Watch Page --- */
+#watch-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 200;
+}
+
+#watch-page.hidden {
+    display: none;
+}
+
+#vimeo-player {
+    width: 80vw; /* ความกว้าง 80% ของหน้าจอ */
+    height: 45vw; /* รักษาสัดส่วน 16:9 */
+    max-width: 100%;
+    max-height: 100%;
+    background-color: black; /* เพื่อไม่ให้เห็นพื้นหลังตอนโหลด */
+}
+
+.back-button {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    cursor: pointer;
+    z-index: 201;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background: rgba(255,255,255,0.4);
+}
